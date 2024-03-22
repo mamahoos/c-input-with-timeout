@@ -69,14 +69,14 @@ char* add_character_to_end(char* str, char character) {
 
 char* input_with_timeout(const char* prompt, const unsigned int timeout) {
     // Define characters for carriage return, line feed, backspace, and null
-    char CR  = '\r';
-    char LF  = '\n';
-    char BS  = '\b';
-    char NUL = '\0';
+    char CR = '\r';
+    char LF = '\n';
+    char BS = '\b';
+    char NL = '\0';
 
     // Initialize an empty line buffer
     char* line = (char*) malloc(1 * sizeof(char));
-    *line = NUL;
+    *line = NL;
 
     // Print the prompt to the console
     printf(prompt);
@@ -96,7 +96,7 @@ char* input_with_timeout(const char* prompt, const unsigned int timeout) {
             // If the character is a backspace
             if (c == BS) {
                 // If the line is not empty
-                if (*line != NUL) {
+                if (*line != NL) {
                     // Remove the last character from the line
                     line = remove_last_character(line);
 
