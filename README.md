@@ -9,7 +9,7 @@ To run this code, first compile it:
 gcc main.c -o main
 ```
 
-##F unctions
+## Functions
 
 - char* remove_last_character(char* str): This function removes the last character of a string.
 - char* add_character_to_end(char* str, char character): This function adds a character to the end of a string.
