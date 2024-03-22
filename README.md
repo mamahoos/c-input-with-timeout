@@ -6,14 +6,8 @@ This project includes a function in the C programming language that receives use
 To run this code, first compile it:
 
 ```bash
-gcc main.c -o main```
-
-Then, execute the program:
-
-```bash
-./main
+gcc main.c -o main
 ```
-
 ##Functions
 
 -char* remove_last_character(char* str): This function removes the last character of a string.
