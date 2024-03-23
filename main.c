@@ -106,7 +106,7 @@ char* input_with_timeout(const char* prompt, const unsigned int timeout) {
                     // Move the cursor back
                     printf("%c", BS);
 
-                    // Print the prompt and the updated line
+                     // Print the prompt and the updated line
                     // printf("%c%s%s", CR, prompt, line);
                 }
             }
