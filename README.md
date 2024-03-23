@@ -15,5 +15,5 @@ gcc main.c -o main
 - char* add_character_to_end(char* str, char character): This function adds a character to the end of a string.
 - char* input_with_timeout(const char* prompt, const unsigned int timeout): This function receives user input with a timeout.
 
-### Note for Memory Management:
-After using the pointer returned by the function "input_with_timeout", make sure to free the allocated memory using free() to avoid memory leaks !
+## Note for Memory Management
+- After using the pointer returned by the function "input_with_timeout", make sure to free the allocated memory using free() to avoid memory leaks !
