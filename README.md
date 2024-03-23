@@ -23,7 +23,7 @@ gcc main.c -o main
 
 
 
-## Alert
+## Alerts
 
 > [!NOTE]
 > This code includes functions that manipulate strings in C. It's important to understand how memory allocation works in C before using these functions.
