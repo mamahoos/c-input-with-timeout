@@ -18,6 +18,7 @@ gcc main.c -o main
 ## Note for Memory Management
 - After using the pointer returned by the function `input_with_timeout`, make sure to free the allocated memory using free() to avoid memory leaks !
 
+## Alert
 > [!NOTE]
 > This code includes functions that manipulate strings in C. It's important to understand how memory allocation works in C before using these functions.
 
