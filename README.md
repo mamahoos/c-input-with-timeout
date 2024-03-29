@@ -42,7 +42,7 @@ gcc main.c -o main
 char *input = input_with_timeout("Enter your input: ", 20);
 
 if (input != NULL) {
-    printf("Input received: '%s'\n", input);
+    printf("Input received: '%s'.\n", input);
     free(input);
 } else {
     printf("Timeout occurred. Returning NULL.\n");
