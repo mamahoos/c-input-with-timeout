@@ -36,3 +36,17 @@ gcc main.c -o main
 
 > [!IMPORTANT]
 > The `remove_last_character` and `add_character_to_end` functions modify the original string. If you need to keep the original string unchanged, make sure to create a copy of the string before using these functions.
+
+## Example
+```c
+char *input = input_with_timeout("Enter your input: ", 10);
+
+// If the timeout is not reached
+if (input != NULL) {
+    printf("Input received: '%s'\n", input);
+    free(input);
+} else {
+    // If input is NULL, print a timeout message
+    printf("Timeout occurred. Returning NULL.\n");
+}
+```
