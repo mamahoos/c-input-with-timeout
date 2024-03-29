@@ -87,14 +87,15 @@ char* input_with_timeout(const char* prompt, const unsigned int timeout) {
     const int DELAY  = 5000;    // (5e-3 s) ~~~ (5 ms)
 
     // Loop until the current time is less than the end time
-    while (time(NULL) < end) {
+    // If the timeout is "NULL" or "0" , this condition is always true
+    while (!timeout || time(NULL) < end) {
         // If a key has been pressed
         if (kbhit()) {
             // Get the pressed character
-            char c = getch();
+            char ch = getch();
 
             // If the character is a backspace
-            if (c == BS) {
+            if (ch == BS) {
                 // If the line is not empty
                 if (*line != NL) {
                     // Remove the last character from the line
@@ -108,7 +109,7 @@ char* input_with_timeout(const char* prompt, const unsigned int timeout) {
                 }
             }
             // If the character is a carriage return or line feed
-            else if (c == CR || c == LF) {
+            else if (ch == CR || ch == LF) {
                 // Print a new line and return the line
                 printf("%c%c", CR, LF);
                 return line;
@@ -116,8 +117,8 @@ char* input_with_timeout(const char* prompt, const unsigned int timeout) {
             // If the character is any other character
             else {
                 // Print the character and add it to the end of the line
-                printf("%c", c);
-                line = add_character_to_end(line, c);
+                printf("%c", ch);
+                line = add_character_to_end(line, ch);
             }
         }
         // Sleep for a short delay to prevent high CPU usage
@@ -134,7 +135,7 @@ int main() {
     // Get user input with a timeout of 10 seconds
     char *input = input_with_timeout("Enter your input: ", 10);
 
-    // If input is not NULL, print the input
+    // If the timeout is not reached
     if (input != NULL) {
         printf("Input received: '%s'\n", input);
         free(input);
