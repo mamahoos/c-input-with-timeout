@@ -39,14 +39,12 @@ gcc main.c -o main
 
 ## Example
 ```c
-char *input = input_with_timeout("Enter your input: ", 10);
+char *input = input_with_timeout("Enter your input: ", 20);
 
-// If the timeout is not reached
 if (input != NULL) {
     printf("Input received: '%s'\n", input);
     free(input);
 } else {
-    // If input is NULL, print a timeout message
     printf("Timeout occurred. Returning NULL.\n");
 }
 ```
